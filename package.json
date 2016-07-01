@@ -33,5 +33,8 @@
     "babel-tape-runner": "^2.0.1",
     "tap-diff": "^0.1.1",
     "tape": "^4.6.0"
+  },
+  "dependencies": {
+    "pdf-text-extract": "^1.4.1"
   }
 }

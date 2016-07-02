@@ -1,6 +1,6 @@
 import test from 'tape'
 
-import extractColumns from '../utils/extractTableColumns'
+import extractColumns from '../utils/extractColumnData'
 
 test('extractColumns', (t) => {
   const actualTableHead = "Table   Player              DCI          Opponent            DCI          Points"

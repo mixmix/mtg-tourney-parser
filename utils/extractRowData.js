@@ -22,5 +22,5 @@ function tidyFormat (string) {
     Number(string)
 }
 
-export default extractRowData
+module.exports = extractRowData
 

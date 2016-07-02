@@ -1,10 +1,10 @@
 function extractColumns(head) { 
-  const colPattern = /\w+(\s{3,}|\s*$)/g  // words characters followed by ( 3 or more spaces || (any spaces && end of line) )
-  const rawCols = head.match(colPattern)
+  var colPattern = /\w+(\s{3,}|\s*$)/g  // words characters followed by ( 3 or more spaces || (any spaces && end of line) )
+  var rawCols = head.match(colPattern)
 
   return rawCols.reduce( 
     (prev, next, index) => {
-      const start = prev[0] ? prev[ prev.length - 1 ].end : 0
+      var start = prev[0] ? prev[ prev.length - 1 ].end : 0
 
       return [
         ...prev,
@@ -20,5 +20,5 @@ function extractColumns(head) {
   )
 }
 
-export default extractColumns
+module.exports = extractColumns
 

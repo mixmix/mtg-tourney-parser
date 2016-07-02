@@ -1,10 +1,10 @@
-import test from 'tape'
+var test = require('tape')
 
-import extractRowData from '../utils/extractRowData'
+var extractRowData = require('../utils/extractRowData')
 
 test('extractRowData', t => {
 
-  const tableCols = [
+  var tableCols = [
     { 
       index: 0,
       start: 0,
@@ -23,33 +23,33 @@ test('extractRowData', t => {
     },
   ]
 
-  const fullRow = [
+  var fullRow = [
     pad('1', 8),
     pad('Ariadne Name-thing', 20),
     pad('42', 8)
   ].join('')
 
-  const partialRow = [
+  var partialRow = [
     pad('', 8),
     'Nissa Revanae',
     ''
   ].join('')
 
 
-  const tableBodyRows = [
+  var tableBodyRows = [
     fullRow,
     partialRow
   ]
 
-  const extractedRowData = extractRowData(tableBodyRows, tableCols)
+  var extractedRowData = extractRowData(tableBodyRows, tableCols)
 
-  const fullRowData = {
+  var fullRowData = {
     Table: 1,
     Player: 'Ariadne Name-thing',
     Points: 42,
   }
 
-  const partialRowData = {
+  var partialRowData = {
     Table: null,
     Player: 'Nissa Revanae',
     Points: null,
@@ -63,7 +63,7 @@ test('extractRowData', t => {
 })
 
 function pad (string, requiredLength) {
-  const diff = requiredLength - string.length
+  var diff = requiredLength - string.length
 
   return string + Array(diff).fill(' ').join('')
 }

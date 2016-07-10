@@ -12,7 +12,14 @@ On Debian / Ubuntu, the `poppler-utils` is a package that provides this.
 To use this package on Heroku, add `poppler-utils` to an `Aptfile` in the root of your project, then tell heroku you want to install those prior to your application startup : 
 
 ```bash
-heroku buildpack:set https://github.com/heroku/heroku-buildpack-multi.git -a NAME_OF_YOUR_HEROKU_APP
+heroku buildpacks:set https://github.com/heroku/heroku-buildpack-multi.git -a NAME_OF_YOUR_HEROKU_APP
+```
+
+You'll also need a `.buildpacks` file to declare which buildpacks you'd like to use: 
+
+```bash
+https://github.com/ddollar/heroku-buildpack-apt.git
+https://github.com/heroku/heroku-buildpack-nodejs.git
 ```
 
 ## Usage

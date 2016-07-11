@@ -12,6 +12,13 @@ function parser (filePath, callback) {
     }
 
     var lines = text.join('\n').split('\n')
+
+    if (!isValidReporterFile(lines)) {
+      callback("Error: This doesn't appear to be a Wizards Event Reporter pdf")
+      return
+    }
+
+
     var tableRows = extractTableRows(lines)
     var columnData = extractColumnData(tableRows.head)
     var rowData = extractedRowData(tableRows.body, columnData)

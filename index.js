@@ -3,6 +3,7 @@ var extract = require('pdf-text-extract')
 var extractTableRows  = require('./utils/extractTableRows')
 var extractColumnData = require('./utils/extractColumnData')
 var extractedRowData  = require('./utils/extractRowData')
+var isValidReporterFile  = require('./utils/isValidReporterFile')
 
 function parser (filePath, callback) {
   extract(filePath, (err, text) => {

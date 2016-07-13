@@ -4,13 +4,15 @@ function extractRowData (tableBodyRows, colsData) {
 
 function splitRow (colsData) {
   return (row) => {
-    return colsData.reduce(
+    var rowData = colsData.reduce(
       (prev, next) => { 
         prev[next.name] = tidyFormat( row.slice(next.start, next.end) )
         return prev
       },
       {}
     )
+
+    return rowData
   }
 }
 

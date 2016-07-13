@@ -20,9 +20,9 @@ function parser (filePath, callback) {
     }
 
 
-    var tableRows = extractTableRows(lines)
-    var columnData = extractColumnData(tableRows.head)
-    var rowData = extractedRowData(tableRows.body, columnData)
+    var tableRows  = extractTableRows(lines)
+    var columnData = extractColumnData(tableRows)
+    var rowData    = extractedRowData(tableRows.body, columnData)
 
     callback(null, rowData)
 

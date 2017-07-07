@@ -12,7 +12,7 @@ function parser (filePath, callback) {
       return
     }
 
-    var lines = text.join('\n').split('\n')
+    var lines = text.join('').split('\n')
 
     if (!isValidReporterFile(lines)) {
       callback("Error: This doesn't appear to be a Wizards Event Reporter pdf")

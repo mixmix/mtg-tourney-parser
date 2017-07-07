@@ -1,5 +1,6 @@
 var extract = require('pdf-text-extract')
 
+var extractRound      = require('./utils/extractRound')
 var extractTableRows  = require('./utils/extractTableRows')
 var extractColumnData = require('./utils/extractColumnData')
 var extractedRowData  = require('./utils/extractRowData')
@@ -19,13 +20,12 @@ function parser (filePath, callback) {
       return
     }
 
-
+    var round      = extractRound(lines)
     var tableRows  = extractTableRows(lines)
     var columnData = extractColumnData(tableRows)
     var rowData    = extractedRowData(tableRows.body, columnData)
 
-    callback(null, rowData)
-
+    callback(null, rowData, round)
   })
 }
 
